@@ -4,10 +4,10 @@ import Router from 'vue-router'
 
 //引入模板
 import register from '@/components/register'
-import find from '@/components/find'
-import mine from '@/components/mine'
-import video from '@/components/video'
-import cloude from '@/components/cloude'
+import find from '@/components/tabbar/find'
+import mine from '@/components/tabbar/mine'
+import video from '@/components/tabbar/video'
+import cloude from '@/components/tabbar/cloude'
 import recommend from '@/components/secondComponents/recommend'
 
 //挂载路由

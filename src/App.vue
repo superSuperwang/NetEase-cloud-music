@@ -57,6 +57,7 @@ import DrawerLayout from 'vue-drawer-layout'
     },
     methods:{
       show(){
+        
         this.$refs.drawer.toggle();
        
       }
@@ -66,8 +67,7 @@ import DrawerLayout from 'vue-drawer-layout'
  
 <style  scoped>
 
-.main-content {
-  
+  .main-content {
       overflow: hidden;
       height: 100%;
       overflow:auto;
@@ -76,89 +76,86 @@ import DrawerLayout from 'vue-drawer-layout'
       padding-left:15px;
       padding-right: 15px;
     }
- .drawer-content{
-   background-color: white;
-  height: 100%;
- }
- .mui-bar{
-   position:absolute;
-   
-   height: 60px;
-  justify-content: center; /*子元素水平居中*/
-   align-items: center; /*子元素垂直居中*/
-   display: -webkit-flex;
+  .drawer-content{
+      background-color: white;
+      height: 100%;
+    }
+  .mui-bar{
+      position:absolute;
+      height: 60px;
+      justify-content: center; /*子元素水平居中*/
+      align-items: center; /*子元素垂直居中*/
+      display: -webkit-flex;
 
-}
-.mui-icon-bars{
-   display: block;
-   position:absolute;
-   left:13px;
-   color: black;
-}
-.mui-icon-search{
-   display: block;
-   position:absolute;
-   right:13px;
-   color: black;
-}
+    }
+  .mui-icon-bars{
+      display: block;
+      position:absolute;
+      left:13px;
+      color: black;
+    }
+  .mui-icon-search{
+      display: block;
+      position:absolute;
+      right:13px;
+      color: black;
+    }
 
-.router-link-active{
-  color:black;
-  
-  font-size: 20px;
-  font-weight: 500;
+  .router-link-active{
+      color:black;
+      font-size: 20px;
+      font-weight: 500;
 
-}
+    }
 
-.tar{
-  display: block;
-  margin:0 10px;
-}
-.foot{
-position: absolute;
-bottom: 0px;
-width: 100%;
-height: 50px;
-border-top: 1px solid gainsboro;
-background-color: white;
-opacity: 0.8;
-}
-.overflow{
-  height: 100%;
-  overflow: auto
-}
-.head-img{
-  height:30px;
-  width: 30px;
-}
-.head-img img{
-  height: 100%;
-  width: 100%;
-}
+  .tar{
+      display: block;
+      margin:0 10px;
+    }
+  .foot{
+      position: absolute;
+      bottom: 0px;
+      width: 100%;
+      height: 50px;
+      border-top: 1px solid gainsboro;
+      background-color: white;
+      opacity: 0.8;
+    }
+  .overflow{
+      height: 100%;
+      overflow: auto
+    }    
+  .head-img{
+      height:30px;
+      width: 30px;
+    }    
+  .head-img img{
+      height: 100%;
+      width: 100%;
+    }    
+    
+  .search{
+      background-color:white;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index:999;
+      top:0;
+    }
+  .search-enter {
+      opacity: 0;
+      transform: translateY(100%);
+    }
 
-.search{
-    background-color:white;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index:999;
-    top:0;
+  .search-leave-to {
+      opacity: 0;
+      transform: translateY(100%);
+      position: absolute;
+    }
 
-  }
-   .search-enter {
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-.search-leave-to {
-  opacity: 0;
-  transform: translateY(100%);
-  position: absolute;
-}
-
-.search-enter-active,
-.search-leave-active {
-  transition: all 0.5s ease;
-}
+  .search-enter-active,
+  .search-leave-active {
+      transition: all 0.5s ease;
+    }
 
 </style>

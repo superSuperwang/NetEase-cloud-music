@@ -1,6 +1,6 @@
 <template>
 <div>
-   
+   <h1>这是mine组件</h1>
 </div>
     
 </template>

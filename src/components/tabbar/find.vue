@@ -13,7 +13,7 @@
  
 </mt-swipe>
 
-
+<!--九宫格-->
 <div id="nine">
   <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_daily.png" alt=""></div> <span>每日推荐</span></router-link>
   <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_playlist.png" alt=""></div><span>歌单</span></router-link>
@@ -96,12 +96,9 @@ export default {
 *{
   margin:0;
   padding:0;
-
 }
 
-.find{
-  
-  
+.find{ 
   width: 100%;
   height: 100%;
 }
@@ -110,28 +107,25 @@ export default {
 }
 .mint-swipe img{
   border-radius: 3%;
-   width: 100%;
+  width: 100%;
   height: 100%;
 }
 
 #nine{
-  
-   justify-content: center; /*子元素水平居中*/
-   display: -webkit-flex;
-
-   margin-top:10px ;
-  
+  justify-content: center; /*子元素水平居中*/
+  display: -webkit-flex;
+  margin-top:10px ;
 }
 .small{
   border-bottom: 1px solid ghostwhite;
   margin-bottom: 20px;
 }
 .small span{
-   font-size: small;
-   text-align: center;
-   display:block;
-   margin: 10px 0;
-   color:grey;
+  font-size: small;
+  text-align: center;
+  display:block;
+  margin: 10px 0;
+  color:grey;
    
 }
 
@@ -141,11 +135,11 @@ export default {
   background-color: rgb(211,58,49);
   float: left;
   margin: 10px 23px;
-   border-radius: 50%;
+  border-radius: 50%;
   justify-content: center; /*子元素水平居中*/
-   align-items: center; /*子元素垂直居中*/
-   display: -webkit-flex;
-   cursor: pointer;
+  align-items: center; /*子元素垂直居中*/
+  display: -webkit-flex;
+  cursor: pointer;
 }
 
 .taricon img{
@@ -168,36 +162,36 @@ export default {
 .list-ul{
   width: 100%;
   list-style: none;
- margin-right:-14px;
- overflow:hidden
+  margin-right:-14px;
+  overflow:hidden
 }
 
 .list-ul li{
-float: left;
- width:30% ;
-position: relative;
+  float: left;
+  width:30% ;
+  position: relative;
 }
 .list-ul li:nth-child(3n-1){
   margin:0 21px;
 }
 
 .list-ul li img{
- border-radius: 5%;
-width:100%;
+  border-radius: 5%;
+  width:100%;
 }
 .list-ul li>span{
-font-size: small;
-color:gray;
+  font-size: small;
+  color:gray;
 }
 .list-ul li .top{
   position:absolute;
   right: 3px;
   z-index: 5;
   align-items: center; /*子元素垂直居中*/
-   display: -webkit-flex;
+  display: -webkit-flex;
 }
 .list-ul li .top img{
-   width: 20px;
+  width: 20px;
  
 }
 .list-ul li .top span{

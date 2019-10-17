@@ -1,4 +1,4 @@
-declare module "mint-ui" {
+  declare module "mint-ui" {
     const Mint: any;
     export const Toast: any;
     export const MessageBox: any;
