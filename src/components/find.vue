@@ -1,6 +1,6 @@
 <template>
 <div class="find">
-
+<router-view></router-view>
 <!--轮播-->
 <mt-swipe :auto="4000">
   <mt-swipe-item><img src="../images/1.jpg" alt=""></mt-swipe-item>
@@ -15,11 +15,11 @@
 
 
 <div id="nine">
-  <div class="small"><div class="taricon"><img src="../images/t_dragonball_icn_daily.png" alt=""></div> <span>每日推荐</span></div>
-   <div class="small"><div class="taricon"><img src="../images/t_dragonball_icn_playlist.png" alt=""></div><span>歌单</span></div>
-    <div class="small"><div class="taricon"><img src="../images/t_dragonball_icn_rank.png" alt=""></div><span>排行榜</span></div>
-     <div class="small"><div class="taricon"><img src="../images/t_dragonball_icn_radio.png" alt=""> </div><span>电台</span></div>
-      <div class="small"><div class="taricon"><img src="../images/t_dragonball_icn_look.png" alt=""></div> <span>直播</span></div>
+  <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_daily.png" alt=""></div> <span>每日推荐</span></router-link>
+  <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_playlist.png" alt=""></div><span>歌单</span></router-link>
+   <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_rank.png" alt=""></div><span>排行榜</span></router-link>
+    <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_radio.png" alt=""> </div><span>电台</span></router-link>
+     <router-link to="/find/recommend" tag='div' class="small"><div class="taricon"><img src="../images/t_dragonball_icn_look.png" alt=""></div> <span>直播</span></router-link>
      
 </div>
 
@@ -31,7 +31,7 @@
     <li v-for="(item,index) in musicList" :key="index">
        <div  class="top">
          <img src="../images/akj.png" alt="">
-         <span>{{item.playCount}}</span>
+         <span>{{item.playCount | count}}</span>
        </div>
         <img :src="item.coverImgUrl" alt="">
        <span>{{item.name}}</span>
@@ -68,12 +68,27 @@ export default {
       .catch((error)=> {
        console.log(error);
       });
-   }
- 
-   ,
+   },
     methods:{
        
+    },
+    filters:{
+        count(data){ 
+           var data=data.toString()
+          if(data.length<5){
+            return data
+          }else if(data.length>=5&&data.length<9){   
+           var del=data.slice(-4)
+           var result=data.replace(del,'万')
+           return result
+          }else{
+           var del=data.slice(-8)
+           var result=data.replace(del,'亿')
+           return result
+          }
+        }
     }
+
     
 }
 </script>
@@ -85,12 +100,10 @@ export default {
 }
 
 .find{
-  position:absolute;
-  top:60px;
-  padding:0 15px;
-  overflow: auto;
+  
+  
+  width: 100%;
   height: 100%;
-  overflow: auto;
 }
 .mint-swipe{
   height: 200px;
@@ -105,8 +118,9 @@ export default {
   
    justify-content: center; /*子元素水平居中*/
    display: -webkit-flex;
-  
+
    margin-top:10px ;
+  
 }
 .small{
   border-bottom: 1px solid ghostwhite;
@@ -126,7 +140,7 @@ export default {
   height: 50px;
   background-color: rgb(211,58,49);
   float: left;
-  margin: 10px 19px;
+  margin: 10px 23px;
    border-radius: 50%;
   justify-content: center; /*子元素水平居中*/
    align-items: center; /*子元素垂直居中*/
@@ -141,7 +155,7 @@ export default {
 }
 .list{
   width: 100%;
- padding:0 10px;
+ 
 }
 .list .ss{
   display: block;
@@ -155,6 +169,7 @@ export default {
   width: 100%;
   list-style: none;
  margin-right:-14px;
+ overflow:hidden
 }
 
 .list-ul li{
